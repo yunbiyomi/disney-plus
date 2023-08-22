@@ -6,7 +6,7 @@ const Nav = () => {
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      window.scrollY>50 ? setShow(true) : setShow(false);
+      window.scrollY > 50 ? setShow(true) : setShow(false);
     })
     return () => {
       window.removeEventListener('scroll', () => {})
@@ -14,7 +14,7 @@ const Nav = () => {
   },[])
 
   return (
-    <NavWrapper $show={show}>
+    <NavWrapper show={show}>
       <Logo>
         <img
           alt="Disney Plus Logo"
@@ -25,7 +25,7 @@ const Nav = () => {
   )
 }
 
-export default Nav
+export default Nav;
 
 const NavWrapper = styled.nav`
   position: fixed;
