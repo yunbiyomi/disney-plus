@@ -99,20 +99,20 @@
   align-items: center;
   cursor: pointer;
   outline: none;
-  border: none;
+  border: 3px solid white;
+  border-radius: 10px;
   font-size: 1rem;
   font-weight: 700;
   padding: 0.4rem 1rem;
-  margin-left: 1rem;
 }
 
 .banner__button:hover {
-  color: #000;
-  background-color: rgba(170, 170, 170, .9);
+  color: #040714;
+  border-color: #040714;
   transition: all .2s;
 }
 
 .play {
-  background-color: white;
-  color: black;
+  background-color: transparent;
+  color: white;
 }

@@ -67,13 +67,13 @@ const Banner = () => {
           </h1>
   
           <div className='banner__buttons'>
-            {movie.videos?.results[0]?.key && 
+            {movie.videos?.results[0]?.key && (
               <button 
                 className='banner__button play'
                 onClick={() => setIsClicked(true)}>
                 PLAY
               </button>
-            }
+            )}
           </div>
   
           <p className='banner__description'>

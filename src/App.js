@@ -13,13 +13,13 @@ function App() {
         <Nav/>
         <Banner/>
         <Category/>
-        <Row title="Trending Now Movies" id="TN" fetchUrl={requests.fetchTrending}></Row>
-        <Row title="Top Rated Movies" id="TR" fetchUrl={requests.fetchTopRated}></Row>
-        <Row title="Action Movies" id="AM" fetchUrl={requests.fetchActionMovies}></Row>
-        <Row title="Comedy Movies" id="CM" fetchUrl={requests.fetchComedyMovies}></Row>
-        <Row title="Documentaries Movies" id="DM" fetchUrl={requests.fetchDocumentaries}></Row>
-        <Row title="Horror Movies" id="HM" fetchUrl={requests.fetchHorrorMovies}></Row>
-        <Row title="Romance Movies" id="RM" fetchUrl={requests.fetchRomanceMovies}></Row>
+        <Row title="새로 개봉한 영화" id="TN" fetchUrl={requests.fetchTrending}></Row>
+        <Row title="TOP 영화" id="TR" fetchUrl={requests.fetchTopRated}></Row>
+        <Row title="액션 영화" id="AM" fetchUrl={requests.fetchActionMovies}></Row>
+        <Row title="코미디 영화" id="CM" fetchUrl={requests.fetchComedyMovies}></Row>
+        <Row title="다큐멘터리 영화" id="DM" fetchUrl={requests.fetchDocumentaries}></Row>
+        <Row title="공포 영화" id="HM" fetchUrl={requests.fetchHorrorMovies}></Row>
+        <Row title="로맨스 영화" id="RM" fetchUrl={requests.fetchRomanceMovies}></Row>
       </Container>
     </div>
   );
