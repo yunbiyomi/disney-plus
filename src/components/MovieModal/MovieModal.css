@@ -14,11 +14,21 @@
 .modal-close {
   position: absolute;
   right: 20px;
-  top: 15px;
+  top: 10px;
   cursor: pointer;
   z-index: 1000;
   color: white;
-  font-size: 20px;
+  font-size: 25px;
+}
+
+.modal-back {
+  position: absolute;
+  left: 20px;
+  top: 10px;
+  cursor: pointer;
+  z-index: 1000;
+  color: white;
+  font-size: 30px;
 }
 
 .modal {
@@ -51,6 +61,17 @@
   height: auto;
 }
 
+.modal__play-button {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  z-index: 1000;
+  top: 152px;
+  right: 345px;
+  cursor: pointer;
+}
+
 .modal__content {
   padding: 40px;
   color: white;
@@ -65,6 +86,10 @@
 .modal__details {
   font-weight: 600;
   font-size: 18px;
+}
+
+.modal__user_perc {
+  color: #00b15e
 }
 
 .modal__overview {
