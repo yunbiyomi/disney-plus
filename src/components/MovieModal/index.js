@@ -32,9 +32,6 @@ const MovieModal = ({
     }
   };
 
-  console.log(id);
-  console.log(isVideo.videos);
-
   return (
     <div className='presentation' role='presentation'>
       <div className='wrapper-modal'>
@@ -92,7 +89,7 @@ export default MovieModal;
 
 const Iframe = styled.iframe`
   width: 100%;
-  height: 400px;
+  height: 460px;
   z-index: -1;
   opacity: .65;
   border: none;
