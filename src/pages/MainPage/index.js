@@ -1,10 +1,9 @@
-import './App.css';
-import Banner from './components/Banner';
-import Category from './components/Category';
-import Nav from './components/Nav';
+import Banner from '../../components/Banner';
+import Category from '../../components/Category';
+import Nav from '../../components/Nav';
 import styled from 'styled-components'
-import Row from './components/Row';
-import requests from './api/request';
+import Row from '../../components/Row';
+import requests from '../../api/request';
 
 const MainPage = () => {
   return (
@@ -17,7 +16,7 @@ const MainPage = () => {
         <Row title="TOP 영화" id="TR" fetchUrl={requests.fetchTopRated}/>
         <Row title="액션 영화" id="AM" fetchUrl={requests.fetchActionMovies}/>
         <Row title="코미디 영화" id="CM" fetchUrl={requests.fetchComedyMovies}/>
-        <Row title="다큐멘터리 영화" id="DM" fetchUrl={requests.fetchDocumentariRow}/>
+        <Row title="다큐멘터리 영화" id="DM" fetchUrl={requests.fetchDocumentaries}/>
         <Row title="공포 영화" id="HM" fetchUrl={requests.fetchHorrorMovies}/>
         <Row title="로맨스 영화" id="RM" fetchUrl={requests.fetchRomanceMovies}/>
       </Container>

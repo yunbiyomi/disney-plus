@@ -23,6 +23,8 @@ const Row = ({ title, id, fetchUrl}) => {
     setSelectedMovie(movie);
   }
 
+  console.log('movies : ', movies);
+
   return (
     <div>
       <h2>{title}</h2>
@@ -36,8 +38,7 @@ const Row = ({ title, id, fetchUrl}) => {
           </span>
         </div>
         <div id={id} className='row__posters'>
-
-          {movies.map((movie) => (
+          {movies && movies.map((movie) => (
             <img 
               key={movie.id}
               className='row__poster'
