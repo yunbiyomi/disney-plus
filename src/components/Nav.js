@@ -1,20 +1,25 @@
 import React, { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom';
 import styled from 'styled-components'
 
 const Nav = () => {
   const [show, setShow] = useState(false);
+  const { pathname } = useLocation();
+  console.log(pathname);
 
   useEffect(() => {
-    window.addEventListener('scroll', () => {
-      window.scrollY > 50 ? setShow(true) : setShow(false);
-    })
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener('scroll', () => {})
+      window.removeEventListener('scroll', handleScroll);
     }
   },[])
 
+  const handleScroll = () => {
+    window.scrollY > 50 ? setShow(true) : setShow(false);
+  }
+
   return (
-    <NavWrapper show={show}>
+    <NavWrapper $show={show}>
       <Logo>
         <img
           alt="Disney Plus Logo"
