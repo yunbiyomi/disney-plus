@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components'
 
 const Nav = () => {
+  const { pathname } = useLocation;
   const [show, setShow] = useState(false);
-  const { pathname } = useLocation();
-  console.log(pathname);
+  const [searchValue, setSearchValue] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -18,6 +19,11 @@ const Nav = () => {
     window.scrollY > 50 ? setShow(true) : setShow(false);
   }
 
+  const handleChange = (e) => {
+    setSearchValue(e.target.value);
+    navigate(`/search?q=${e.target.value}`);
+  }
+
   return (
     <NavWrapper $show={show}>
       <Logo>
@@ -26,6 +32,14 @@ const Nav = () => {
           src="/images/logo.svg"
           onClick={() => (window.location.href = "/")}></img>
       </Logo>
+      {pathname === "/" ?
+      (<Login>Login</Login>)
+      : (<Input 
+          value={searchValue}
+          onChange={handleChange}
+          className='nav_input' 
+          type='text' 
+          placeholder='영화를 검색해주세요.'/>)}
     </NavWrapper>
   )
 }
@@ -58,5 +72,37 @@ const Logo = styled.a`
   img {
     display: block;
     width: 100%;
+  }
+`;
+
+const Login = styled.a`
+  background-color: rgba(0, 0, 0, .6);
+  padding: 8px 16px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border: 1px solid #f9f9f9;
+  transition: all .2s ease 0s;
+  font-weight: 700;
+
+  &:hover {
+    background-color: #f9f9f9;
+    color: gray;
+    border-color: transparent;
+  }
+`;
+
+const Input = styled.input`
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: rgba(0, 0, 0, .582);
+  border-radius: 5px;
+  color: white;
+  padding: 5px;
+  border: none;
+
+  &:focus {
+    border: 1px solid white;
+    outline: none;
   }
 `;
