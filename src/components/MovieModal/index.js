@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import axios from '../../api/axios'
 import './MovieModal.css'
 import styled from 'styled-components'
+import useOnClickOutside from '../../hooks/useOnClickOutside'
 
 const MovieModal = ({
   id,
@@ -16,6 +17,13 @@ const MovieModal = ({
 }) => {
   const [isVideo, setIsVideo] = useState({});
   const [playVideo, setPlayVideo] = useState(false);
+  const ref = useRef();
+
+  console.log('ref', ref.current);
+
+  useOnClickOutside(ref, () => {
+    setModalOpen(false);
+  })
 
   useEffect(() => {
     fetchData();
@@ -32,10 +40,11 @@ const MovieModal = ({
     }
   };
 
+
   return (
     <div className='presentation' role='presentation'>
       <div className='wrapper-modal'>
-        <div className='modal'>
+        <div className='modal' ref={ref}>
           <span
             onClick={() => setModalOpen(false)}
             className='modal-close'>
