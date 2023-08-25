@@ -37,7 +37,6 @@ const Nav = () => {
     window.scrollY > 50 ? setShow(true) : setShow(false);
   }
 
-
   const handleChange = (e) => {
     setSearchValue(e.target.value);
     navigate(`/search?q=${e.target.value}`);
@@ -152,8 +151,10 @@ const Input = styled.input`
   background-color: rgba(0, 0, 0, .582);
   border-radius: 5px;
   color: white;
-  padding: 5px;
+  padding: 12px;
   border: none;
+  font-size: 20px;
+  width: 500px;
 
   &:focus {
     border: 1px solid white;
