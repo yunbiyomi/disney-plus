@@ -24,7 +24,6 @@ const Banner = () => {
     });
 
     setMovie(movieDetail);
-    console.log('movieDetail', movieDetail);
   }
 
   const truncate = (str, n) => {

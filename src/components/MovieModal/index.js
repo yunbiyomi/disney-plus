@@ -19,8 +19,6 @@ const MovieModal = ({
   const [playVideo, setPlayVideo] = useState(false);
   const ref = useRef();
 
-  console.log('ref', ref.current);
-
   useOnClickOutside(ref, () => {
     setModalOpen(false);
   })

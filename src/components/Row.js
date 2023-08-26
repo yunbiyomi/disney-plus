@@ -18,7 +18,6 @@ const Row = ({ title, id, fetchUrl}) => {
 
   const fetchMovieData = useCallback(async () => {
     const response = await axios.get(fetchUrl);
-    console.log(response.data.results);
     setMovies(response.data.results);
   }, [fetchUrl]);
 
@@ -30,8 +29,6 @@ const Row = ({ title, id, fetchUrl}) => {
     setModalOpen(true);
     setSelectedMovie(movie);
   }
-
-  console.log('movies : ', movies);
 
   return (
     <Container>
