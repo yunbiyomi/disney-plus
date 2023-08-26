@@ -1,5 +1,5 @@
 .swiper-pagination {
-  text-align: right !important;
+  align-items: flex-end !important;
 }
 
 .swiper-pagination-bullet {

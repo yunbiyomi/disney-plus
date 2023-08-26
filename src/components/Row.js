@@ -40,7 +40,7 @@ const Row = ({ title, id, fetchUrl}) => {
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         loop={true}
         navigation
-        pagination={{clickable:true}}
+        pagination={{clickable:true, dynamicBullets: true}}
         breakpoints={{
           1378: {
             slidesPerView: 6,
